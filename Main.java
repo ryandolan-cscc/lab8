@@ -23,16 +23,22 @@ public class Main {
 
                 return dub;
             } catch(NumberFormatException e) {
-                System.out.println("Input error");
+                System.out.println("Invalid input. Please only type positive, numeric characters.");
             }
         }
     }
 
     public static double convertToKilograms(double lbs) {
+        if (lbs <= 0) {
+            throw new NumberFormatException();
+        }
         return lbs / 2.2046;
     }
 
     public static double convertToMeters(double in) {
+        if (in <= 0) {
+            throw new NumberFormatException();
+        }
         return in / 39.37;
     }
 
